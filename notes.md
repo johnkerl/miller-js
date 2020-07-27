@@ -1,0 +1,67 @@
+----------------------------------------------------------------
+VUE/TS NOTES:
+* install
+  * npm install -g @vue/cli # global
+  * vue --version
+* create
+  * vue create test-002
+    * babel/eslint
+    * npm
+* build
+  * cd test-002
+  * npm run serve
+  * http://localhost:8080/
+* deploy
+  * npm run build
+  * vue.config.js needs publicPath
+  * push to ISP and view via dist link
+* files
+  * src/main.ts
+  * src/App.vue
+  * src/components/*.vue
+
+----------------------------------------------------------------
+INFRA:
+* Everything nodeable as much as possible
+* Everyhing TS regardless of browser-only/nodeable or not
+* Vue? since I'm solid with React already
+
+NODEABLE:
+* Formats: CSV/TSV, JSON, DKVP, XTAB, PPRINT, NIDX
+* Ingestors: formats -> array of object
+* Emitters: array of object -> formats
+* Verbs
+  - Start small
+  - Persistable pick-widgets for all options
+
+UI:
+* Idea:
+  o Persisted (JSON.stringify -> browser-local storage, config-file upload/download, etc.) flows
+  o Flow-frame can have files dropped into it
+  o Data files also upload/download//copy/paste
+  o Copy/paste for Pandas/etc
+
+PLAN:
+* Not at first:
+  - Active (1s-callback) update of iterative stats, histogram, etc
+  - Pipe-visibility
+
+* Defer:
+  - data-dependent dropdowns for verb args (e.g. agg-by)
+  - join
+  - tee
+  - drag/drop of flows ...
+
+* Proof of concept:
+  o upload-file button
+    - itype via suffix? or selector? even better, auto-infer/default from suffix?
+    - itypes at first: JSON, CSV, DKVP
+  o table-renderer?
+    - yes if CSV only
+    - not for ragged
+    - how to handle raw text vs parsed structure ...
+  o dropdown for mapper(s) -- initially, just one, which is cat
+  o otype selector
+  o 'go' button for format conversion
+  o copy-to-clipboard option for output
+
