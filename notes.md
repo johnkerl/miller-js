@@ -26,6 +26,11 @@
 * lint
   * `npm run lint`
 
+# COMPONENTS
+
+* https://github.com/vuejs/awesome-vue
+* npm install vue-simple-upload
+
 # INFRA
 
 * Everything nodeable as much as possible
