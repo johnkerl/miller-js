@@ -1,7 +1,14 @@
 <template>
   <div id="app">
+    <!--
     <img alt="Miller logo" src="./assets/mlr-logo.png" />
-    <HelloWorld msg="This is miller.js v0" />
+    -->
+    <h1>This is miller.js v0</h1>
+    <HelloWorld msg="File uploder goes here" />
+    <HelloWorld msg="Input-format selector goes here" />
+    <HelloWorld msg="Verb-selector goes here" />
+    <HelloWorld msg="Output-format selector goes here" />
+    <HelloWorld msg="Output-displayer goes here" />
   </div>
 </template>
 
@@ -22,8 +29,8 @@ export default class App extends Vue {}
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 </style>
