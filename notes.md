@@ -1,14 +1,14 @@
-----------------------------------------------------------------
-VUE/TS NOTES:
+# VUE/TS NOTES
+
 * install
   * npm install -g @vue/cli # global
   * vue --version
 * create
-  * vue create test-002
+  * vue create miller-js
     * babel/eslint
     * npm
 * build
-  * cd test-002
+  * cd miller-js
   * npm run serve
   * http://localhost:8080/
 * deploy
@@ -20,13 +20,14 @@ VUE/TS NOTES:
   * src/App.vue
   * src/components/*.vue
 
-----------------------------------------------------------------
-INFRA:
+# INFRA
+
 * Everything nodeable as much as possible
 * Everyhing TS regardless of browser-only/nodeable or not
 * Vue? since I'm solid with React already
 
-NODEABLE:
+# NODEABLE
+
 * Formats: CSV/TSV, JSON, DKVP, XTAB, PPRINT, NIDX
 * Ingestors: formats -> array of object
 * Emitters: array of object -> formats
@@ -34,14 +35,15 @@ NODEABLE:
   - Start small
   - Persistable pick-widgets for all options
 
-UI:
-* Idea:
-  o Persisted (JSON.stringify -> browser-local storage, config-file upload/download, etc.) flows
-  o Flow-frame can have files dropped into it
-  o Data files also upload/download//copy/paste
-  o Copy/paste for Pandas/etc
+# UI IDEA
 
-PLAN:
+* Persisted (JSON.stringify -> browser-local storage, config-file upload/download, etc.) flows
+* Flow-frame can have files dropped into it
+* Data files also upload/download//copy/paste
+* Copy/paste for Pandas/etc
+
+# SEQUENCING PLAN
+
 * Not at first:
   - Active (1s-callback) update of iterative stats, histogram, etc
   - Pipe-visibility
@@ -53,15 +55,15 @@ PLAN:
   - drag/drop of flows ...
 
 * Proof of concept:
-  o upload-file button
+  * upload-file button
     - itype via suffix? or selector? even better, auto-infer/default from suffix?
     - itypes at first: JSON, CSV, DKVP
-  o table-renderer?
+  * table-renderer?
     - yes if CSV only
     - not for ragged
     - how to handle raw text vs parsed structure ...
-  o dropdown for mapper(s) -- initially, just one, which is cat
-  o otype selector
-  o 'go' button for format conversion
-  o copy-to-clipboard option for output
+  * dropdown for mapper(s) -- initially, just one, which is cat
+  * otype selector
+  * 'go' button for format conversion
+  * copy-to-clipboard option for output
 
