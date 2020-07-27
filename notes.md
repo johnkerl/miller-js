@@ -19,6 +19,10 @@
   * src/main.ts
   * src/App.vue
   * src/components/*.vue
+* unit tests
+  * npm run test:unit
+* lint
+  * npm run lint
 
 # INFRA
 
