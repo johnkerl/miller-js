@@ -16,7 +16,7 @@ export default class MJSFileUploader extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .mjs-file-uploader {
-  margin: 40px 0 0;
+  margin: 5px;
   border: 1px solid #aaaaaa;
   padding: 5px;
 }

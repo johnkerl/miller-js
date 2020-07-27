@@ -26,10 +26,16 @@
 * lint
   * `npm run lint`
 
+# TO DO
+* eslint config to allow trailing commas; other dinkum imports
+* autolintfix
+
 # COMPONENTS
 
 * https://github.com/vuejs/awesome-vue
 * npm install vue-simple-upload
+* npm install vue-dropdowns
+  * https://github.com/mikerodham/vue-dropdowns
 
 # INFRA
 
