@@ -1,33 +1,35 @@
 # VUE/TS NOTES
 
 * install
-  * npm install -g @vue/cli # global
-  * vue --version
+  * `npm install -g @vue/cli` (global)
+  * `vue --version`
 * create
-  * vue create miller-js
+  * `vue create miller-js`
     * babel/eslint
     * npm
+    * TS
+    * etc
 * build
-  * cd miller-js
-  * npm run serve
+  * `cd miller-js`
+  * `npm run serve`
   * http://localhost:8080/
 * deploy
-  * npm run build
-  * vue.config.js needs publicPath
-  * push to ISP and view via dist link
+  * `npm run build`
+  * note vue.config.js needs publicPath
+  * push to ISP and view via https://.../miller-js/dist/index.html
 * files
-  * src/main.ts
-  * src/App.vue
-  * src/components/*.vue
+  * `src/main.ts`
+  * `src/App.vue`
+  * `src/components/*.vue`
 * unit tests
-  * npm run test:unit
+  * `npm run test:unit`
 * lint
-  * npm run lint
+  * `npm run lint`
 
 # INFRA
 
 * Everything nodeable as much as possible
-* Everyhing TS regardless of browser-only/nodeable or not
+* Everything TS regardless of browser-only/nodeable or not
 * Vue? since I'm solid with React already
 
 # NODEABLE
