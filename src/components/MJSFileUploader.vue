@@ -19,5 +19,6 @@ export default class MJSFileUploader extends Vue {
   margin: 5px;
   border: 1px solid #aaaaaa;
   padding: 5px;
+  width: 400px;
 }
 </style>

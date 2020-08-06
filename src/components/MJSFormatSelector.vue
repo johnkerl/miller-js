@@ -45,5 +45,6 @@ export default class MJSFormatSelector extends Vue {
   margin: 5px;
   border: 1px solid #aaaaaa;
   padding: 5px;
+  width: 400px;
 }
 </style>
