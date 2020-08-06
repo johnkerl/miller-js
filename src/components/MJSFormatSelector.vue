@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Emit, Vue } from "vue-property-decorator";
 import dropdown from "vue-dropdowns";
 
 @Component({
@@ -28,6 +28,7 @@ export default class MJSFormatSelector extends Vue {
 
   private arrayOfObjects: Array<{name: string}> = [{name:"A"}, {name:"B"}, {name:"C"}];
   private selected = {name: "A"};
+  @Emit('selectedFormat')
   methodToRunOnSelect(newSelected: {name: string}) {
     this.selected = newSelected;
   }

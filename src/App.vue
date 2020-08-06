@@ -5,7 +5,7 @@
     -->
     <h1>This is miller.js v0</h1>
     <MJSFileUploader msg="File uploader goes here" />
-    <MJSFormatSelector msg="Input-format selector goes here" />
+    <MJSFormatSelector msg="Input-format selector goes here" v-on:selectedFormat="setInputFormat"/>
     <HelloWorld msg="Verb-selector goes here" />
     <MJSFormatSelector msg="Output-format selector goes here" />
     <HelloWorld msg="Output-displayer goes here" />
@@ -25,7 +25,12 @@ import MJSFormatSelector from "./components/MJSFormatSelector.vue";
     MJSFormatSelector,
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private inputFormat = 'A';
+  private setInputFormat(newFormat: {name: string}) {
+    this.inputFormat = newFormat.name;
+  }
+}
 </script>
 
 <style>
