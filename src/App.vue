@@ -5,9 +5,9 @@
     -->
     <h1>This is miller.js v0</h1>
     <MJSFileUploader msg="File uploader goes here" />
-    <MJSFormatSelector msg="Input-format selector goes here" v-on:selectedFormat="setInputFormat"/>
+    <MJSFormatSelector msg="Input format" v-on:selectedFormat="setInputFormat"/>
     <HelloWorld msg="Verb-selector goes here" />
-    <MJSFormatSelector msg="Output-format selector goes here" />
+    <MJSFormatSelector msg="Output format" />
     <HelloWorld msg="Output-displayer goes here" />
   </div>
 </template>
