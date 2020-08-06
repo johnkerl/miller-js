@@ -40,6 +40,9 @@
 
 # INFRA
 
+* npm install d3
+* npm install d3-fetch
+* npm install node-fetch
 * Everything nodeable as much as possible
 * Everything TS regardless of browser-only/nodeable or not
 * Vue? since I'm solid with React already
