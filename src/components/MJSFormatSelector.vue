@@ -29,7 +29,7 @@ export default class MJSFormatSelector extends Vue {
   private arrayOfObjects: Array<{name: string}> = [{name:"A"}, {name:"B"}, {name:"C"}];
   @Emit('selectedFormat')
   methodToRunOnSelect(newSelected: {name: string}) {
-    //this.selected = newSelected;
+    // No need to retain here in class state since emitted to parent
   }
 }
 </script>
