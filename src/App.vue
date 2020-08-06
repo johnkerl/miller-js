@@ -18,6 +18,7 @@ import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
 import MJSFileUploader from "./components/MJSFileUploader.vue";
 import MJSFormatSelector from "./components/MJSFormatSelector.vue";
+import {FileFormat} from "./types/MJSTypes";
 
 @Component({
   components: {
@@ -27,8 +28,9 @@ import MJSFormatSelector from "./components/MJSFormatSelector.vue";
   }
 })
 export default class App extends Vue {
-  private inputFormat = 'A';
-  private outputFormat = 'A';
+  // xxx get the defaults into the selector objects somehow ... maybe a prop ...
+  private inputFormat = FileFormat.CSV;
+  private outputFormat = FileFormat.JSON;
   private setInputFormat(newFormat: {name: string}) {
     this.inputFormat = newFormat.name;
   }

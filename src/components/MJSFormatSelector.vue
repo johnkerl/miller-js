@@ -3,7 +3,7 @@
     {{ msg }}
     <dropdown
       :options="arrayOfObjects"
-      :selected='{name:"A"}'
+      :selected='{name:"JSON"}'
       v-on:updateOption="methodToRunOnSelect" 
       :placeholder="'Select an Item'"
     />
@@ -13,6 +13,7 @@
 <script lang="ts">
 import { Component, Prop, Emit, Vue } from "vue-property-decorator";
 import dropdown from "vue-dropdowns";
+import {FileFormat} from "../types/MJSTypes";
 
 @Component({
   components: {
@@ -26,7 +27,9 @@ export default class MJSFormatSelector extends Vue {
     super();
   }
 
-  private arrayOfObjects: Array<{name: string}> = [{name:"A"}, {name:"B"}, {name:"C"}];
+  private arrayOfObjects: Array<{name: string}> = Object.keys(FileFormat).map(f =>
+    ({name: f})
+  );
   @Emit('selectedFormat')
   methodToRunOnSelect(newSelected: {name: string}) {
     // No need to retain here in class state since emitted to parent
