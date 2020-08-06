@@ -3,7 +3,7 @@
     {{ msg }}
     <dropdown
       :options="arrayOfObjects"
-      :selected='{name:"JSON"}'
+      :selected='this.defaultFormat'
       v-on:updateOption="methodToRunOnSelect" 
       :placeholder="'Select an Item'"
     />
@@ -23,8 +23,10 @@ import {FileFormat} from "../types/MJSTypes";
 
 export default class MJSFormatSelector extends Vue {
   @Prop() private msg!: string;
+  @Prop() private defaultFormat!: FileFormat;
   public constructor() {
     super();
+    console.log("DFL", this.defaultFormat);
   }
 
   private arrayOfObjects: Array<{name: string}> = Object.keys(FileFormat).map(f =>

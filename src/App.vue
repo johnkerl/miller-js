@@ -6,9 +6,17 @@
     <h1>This is miller.js v0</h1>
     <p> Mapping from {{this.inputFormat}} to {{this.outputFormat}}</p>
     <MJSFileUploader msg="File uploader goes here" />
-    <MJSFormatSelector msg="Input format" v-on:selectedFormat="setInputFormat"/>
+    <MJSFormatSelector
+      msg="Input format"
+      :defaultFormat = "getInputFormat()"
+      v-on:selectedFormat="setInputFormat"
+    />
     <HelloWorld msg="Verb-selector goes here" />
-    <MJSFormatSelector msg="Output format" v-on:selectedFormat="setOutputFormat" />
+    <MJSFormatSelector
+      msg="Output format"
+      :defaultFormat = "getOutputFormat()"
+      v-on:selectedFormat="setOutputFormat"
+    />
     <HelloWorld msg="Output-displayer goes here" />
   </div>
 </template>
@@ -31,10 +39,16 @@ export default class App extends Vue {
   // xxx get the defaults into the selector objects somehow ... maybe a prop ...
   private inputFormat = FileFormat.CSV;
   private outputFormat = FileFormat.JSON;
-  private setInputFormat(newFormat: {name: string}) {
+  private getInputFormat() {
+    return this.inputFormat;
+  }
+  private getOutputFormat() {
+    return this.outputFormat;
+  }
+  private setInputFormat(newFormat: {name: FileFormat}) {
     this.inputFormat = newFormat.name;
   }
-  private setOutputFormat(newFormat: {name: string}) {
+  private setOutputFormat(newFormat: {name: FileFormat}) {
     this.outputFormat = newFormat.name;
   }
 }
