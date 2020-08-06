@@ -1,38 +1,38 @@
 <template>
   <div id="app">
-    <!--
-    <img alt="Miller logo" src="./assets/mlr-logo.png" />
-    -->
+    <img width="100" height="100" alt="Miller logo" src="./assets/mlr-logo.png" />
     <h1>This is miller.js v0</h1>
     <p> Mapping from {{this.inputFormat}} to {{this.outputFormat}}</p>
-    <MJSFileUploader msg="File uploader goes here" />
+    <MJSFileUploader msg="Input-file stub" />
     <MJSFormatSelector
       msg="Input format"
       :defaultFormat = "getInputFormat()"
       v-on:selectedFormat="setInputFormat"
     />
-    <HelloWorld msg="Verb-selector goes here" />
+    <MJSVerbSelector msg="Verb-selector stub" />
     <MJSFormatSelector
       msg="Output format"
       :defaultFormat = "getOutputFormat()"
       v-on:selectedFormat="setOutputFormat"
     />
-    <HelloWorld msg="Output-displayer goes here" />
+    <MJSOutputDisplayer msg="Output-data stub" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import MJSVerbSelector from "./components/MJSVerbSelector.vue";
 import MJSFileUploader from "./components/MJSFileUploader.vue";
 import MJSFormatSelector from "./components/MJSFormatSelector.vue";
+import MJSOutputDisplayer from "./components/MJSOutputDisplayer.vue";
 import {FileFormat} from "./types/MJSTypes";
 
 @Component({
   components: {
-    HelloWorld,
+    MJSVerbSelector,
     MJSFileUploader,
     MJSFormatSelector,
+    MJSOutputDisplayer,
   }
 })
 export default class App extends Vue {
