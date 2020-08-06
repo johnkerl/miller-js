@@ -1,57 +1,36 @@
 <template>
   <div class="mjs-format-selector">
     {{ msg }}
-    <dropdown>
+    <dropdown
       :options="arrayOfObjects"
-      :selected="A"
-    </dropdown>
+      :selected='{name:"A"}'
+      v-on:updateOption="methodToRunOnSelect" 
+      :placeholder="'Select an Item'"
+    />
   </div>
 </template>
 
-<!--
-<dropdown :options="arrayOfObjects" 
-          :selected="object" 
-          v-on:updateOption="methodToRunOnSelect" 
-          :placeholder="'Select an Item'"
-          :closeOnOutsideClick="boolean">
-</dropdown>
--->
-
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import dropdown from 'vue-dropdowns';
+import dropdown from "vue-dropdowns";
 
-// https://github.com/mikerodham/vue-dropdowns
-// https://blog.logrocket.com/how-to-write-a-vue-js-app-completely-in-typescript/
-// https://www.sitepoint.com/class-based-vue-js-typescript/
 @Component({
   components: {
-    'dropdown': dropdown,
+    dropdown: dropdown,
   },
-
-//  props: {
-//    defaultFormat: {
-//      type: String xxx enum,
-//      required: true
-//    }
-//  },
-
-//   methods: {
-//     methodToRunOnSelect(payload) {
-//       this.object = payload;
-//     }
-//   }
 })
 
 export default class MJSFormatSelector extends Vue {
   @Prop() private msg!: string;
+  public constructor() {
+    super();
+  }
 
-   //arrayOfObjects: ['A', 'B', 'C'];
-   //object string: 'A';
-   //methodToRunOnSelect(payload) {
-     //this.object = payload;
-   //}
-
+  private arrayOfObjects: Array<{name: string}> = [{name:"A"}, {name:"B"}, {name:"C"}];
+  private selected = {name: "A"};
+  methodToRunOnSelect(newSelected: {name: string}) {
+    this.selected = newSelected;
+  }
 }
 </script>
 

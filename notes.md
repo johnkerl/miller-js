@@ -36,6 +36,7 @@
 * npm install vue-simple-upload
 * npm install vue-dropdowns
   * https://github.com/mikerodham/vue-dropdowns
+  * see also modules/vue-dropdowns/Dropdown.vue
 
 # INFRA
 
