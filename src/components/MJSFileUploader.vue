@@ -1,15 +1,31 @@
+<!-- https://www.npmjs.com/package/vue-filereader -->
 <template>
   <div class="mjs-file-uploader">
     {{ msg }}
+    <input
+      type="file"
+      multiple
+      :name="uploadFieldName"
+      :disabled="isSaving"
+      @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import {FileFormat} from "../types/MJSTypes";
 
-@Component
+@Component({
+  components: {
+  },
+})
 export default class MJSFileUploader extends Vue {
   @Prop() private msg!: string;
+
+  private myFunction(x: string) {
+    console.log(x);
+  }
 }
 </script>
 

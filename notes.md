@@ -37,6 +37,7 @@
 * npm install vue-dropdowns
   * https://github.com/mikerodham/vue-dropdowns
   * see also modules/vue-dropdowns/Dropdown.vue
+* npm install @types/vue-filereader ?
 
 # INFRA
 

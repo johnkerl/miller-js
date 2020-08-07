@@ -20,7 +20,6 @@ import {FileFormat} from "../types/MJSTypes";
     dropdown: dropdown,
   },
 })
-
 export default class MJSFormatSelector extends Vue {
   @Prop() private msg!: string;
   @Prop() private defaultFormat!: FileFormat;
