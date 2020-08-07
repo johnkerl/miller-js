@@ -14,14 +14,19 @@ filenames.forEach(filename => {
     if (err) {
       return console.log(err);
     } else {
-      //records = d3.csvParse(contents)
-      console.log({contents});
-      records = JSON.parse(contents);
-      //console.log(records.columns);
-      records.forEach(record => {
+      if (filename.endsWith(".csv")) {
+        records = d3.csvParse(contents)
+      } else if (filename.endsWith(".json")) {
+        records = JSON.parse(contents)
+      } else {
+        console.error(process.argv[0] + ": could not handle file extension on " + filename);
+        process.exit(1);
+      }
+      //records.forEach(record => {
         //console.log({record})
-        console.log(record)
-      });
+        //console.log(record)
+      //});
+      console.log(JSON.stringify(records, null, 2));
     }
   });
 });
